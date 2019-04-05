@@ -29,10 +29,21 @@ public class ShoppingCart {
 		}
 		return cartItem;
 	}
-	
+
 	public void deleteCartItem(int index) {
 		try {
 			cartItems.remove(index);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void updateCartItem(int index, int quantity) {
+		try {
+			CartItem item = cartItems.get(index);
+			if (item != null) {
+				item.setQuantity(quantity);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
